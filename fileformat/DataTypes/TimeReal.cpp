@@ -12,9 +12,9 @@ TimeReal::TimeReal(const DataPointer& start) : QDateTime(QDateTime::fromTime_t(r
 QString TimeReal::toString() const {
 	if(!isValid()) return tr("undefined");
 	if(time().hour() == 0 && time().minute() == 0 && time().second() == 0){
-		return date().toString();
+		return date().toString(Qt::ISODate);
 	}
-	return QDateTime::toString();
+	return QDateTime::toString(Qt::ISODate);
 }
 
 bool TimeReal::isValid() const {
